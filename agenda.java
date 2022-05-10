@@ -1,6 +1,6 @@
 public class agenda {
   
-        private String nome;
+    private String nome;
     private int idade;
     private String filme;
     

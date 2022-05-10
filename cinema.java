@@ -5,7 +5,7 @@ public class cinema {
 
     private String nome;
     private int faixaetaria;
-    private int capacidadeSala;
+    private int capacidadeSala = 20;
 
     public cinema(String separadortxt) {
 
