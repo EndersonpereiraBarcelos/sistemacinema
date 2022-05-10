@@ -3,46 +3,37 @@
  */
 public class cinema {
 
-    private String nome;
-    private int faixaetaria;
-    private int capacidadeSala = 20;
+    private String nomefilme;
+    private String faixaetaria;
+    private String capacidadeSala;
 
     public cinema(String separadortxt) {
 
         String[] separadorsplit = separadortxt.split(";", 3);
 
-        this.nome = separadorsplit[0];
-        this.faixaetaria = setFaixaEtaria(separadorsplit[1]);
-        this.capacidadeSala = StringToInteger(separadorsplit[2]);
+        this.nomefilme = separadorsplit[0];
+        this.faixaetaria = separadorsplit[1];
+        this.capacidadeSala = separadorsplit[2];
     }
-    public String getNome() {
-        return nome;
+    public String getnomefilme() {
+        return nomefilme;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setnomefilme(String nomefilme) {
+        this.nomefilme = nomefilme;
     }
-    public int getFaixaEtaria() {
+    public String getfaixaetaria() {
         return faixaetaria;
     }
-    public int setFaixaEtaria(String faixaetaria) {
-        if(faixaetaria.equalsIgnoreCase("L")){
-            this.faixaetaria = 0;
-            return 0;
-
-        }else {
-            this.faixaetaria = StringToInteger(faixaetaria);
-            return StringToInteger(faixaetaria);
-        }
+    public void setfaixaetaria(String faixaetaria) {
+        this.faixaetaria = faixaetaria;
     }
-    public int getCapacidadeSala() {
+    public String getcapacidadeSala() {
         return capacidadeSala;
     }
-    public void setCapacidadeSala(int capacidadeSala) {
+    public void setcapacidadeSala(String capacidadeSala) {
         this.capacidadeSala = capacidadeSala;
     }
+    
 
-    public int StringToInteger(String entrada){
-            return Integer.parseInt(entrada);
-    }
     
 }

@@ -1,15 +1,16 @@
 public class agenda {
   
     private String nome;
-    private int idade;
+    private String idade;
     private String filme;
     
+    //parseInt Idade
     public agenda(String entrada) {
         
         String[] entradaA = entrada.split(";", 3);
 
         this.nome = entradaA[0];
-        this.idade = Integer.parseInt(entradaA[1]);
+        this.idade = entradaA[1];
         this.filme = entradaA[2];
     }
     public String getNome() {
@@ -18,10 +19,10 @@ public class agenda {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
     public String getFilme() {

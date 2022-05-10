@@ -1,74 +1,56 @@
-package Cinema;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class Cinema {
+public class teste {
     public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
-      Scanner leitor2 = new Scanner(System.in);
+      Scanner leitores = new Scanner(System.in);
   
-      
-        ArrayList<Sala> listaSala = new ArrayList<Sala>();
-         System.out.println("Digite o número de salas ");
+
+        ArrayList<cinema> listaCinema = new ArrayList<cinema>();
+         System.out.println("infome quantidade de salas do cinema ");
         int variSala = scanner.nextInt();
         for(int i=0; i<variSala; i++){
-            System.out.printf("Sala %d - Digite suas informações",(i+1));
-            String nomeFilme;
-            String faixaEtaria;
-            String capacidade;
-            
-            nomeFilme = leitor2.nextLine();
-            faixaEtaria = leitor2.nextLine();
-            capacidade = leitor2.nextLine();
-            
-            Sala sl = new Sala();
-            sl.setNomeFilme(nomeFilme);
-            sl.setFaixaEtaria(faixaEtaria);
-            sl.setCapacidade(capacidade);
+            System.out.printf("Sala %d - Digite suas informações " + "Nome Filme, Faixa Etaria, Capacidade sala",(i+1));
+            String pessoaCinema = leitores.nextLine();
+            cinema saidaPessoaCinema = new cinema(pessoaCinema);
             
             // adicionando dentro da lista "SALA"
-            listaSala.add(sl);
+            listaCinema.add(saidaPessoaCinema);
         }
             
-        ArrayList<Agendamento> varAgendamento = new ArrayList<Agendamento>();
+        ArrayList<agenda> ListaAgendamento = new ArrayList<agenda>();
+        
+        System.out.println("Informe Número de agendamentos ");
         int vari = scanner.nextInt();
         //Parte agendamento
         //nome, idade, filme
         for(int i=0; i<vari; i++){
-            System.out.println("Digite um número para entrada ");
-            System.out.printf("Agendamento %d - Digite suas informações ",(i+1));
-            String nome;
-            String idade;
-            String filme;
+            System.out.printf("Agendamento %d - Digite suas informações " + "Nome, Idade, filme",(i+1));
+            String frase = leitores.nextLine();
             
-            nome = leitor2.nextLine();
-            idade = leitor2.nextLine();
-            filme = leitor2.nextLine();
-            
-            // construtor agendamento
-            // declarando a variavel "ag" do tipo Agendamento
-            Agendamento ag = new Agendamento();
-            ag.setNome(nome);
-            ag.setIdade(idade);
-            ag.setFilme(filme);
-            
-            // adicionando dentro da lista "Agendamento"
-            varAgendamento.add(ag);
+              agenda a =  new agenda(frase);
+
+            ListaAgendamento.add(a);
         }
-        
+
         //SAIDA
-        // o "a:" é a variavel do tipo agendamento (que vai fazer rodar enquanto houver itens dentro da lista varAgendamento
-        for(Agendamento a:varAgendamento){
-            Agendamento v = new Agendamento();
-            Sala s = new Sala();
+        for(agenda saidaAgendamento : ListaAgendamento){
+            System.out.println("Nome: " + saidaAgendamento.getNome());
+            System.out.println("Idade: " + saidaAgendamento.getIdade());
+            System.out.println("Filme: " + saidaAgendamento.getFilme());
             
-            // conferindo se o nome do filme que a pessoa vai assistir é o mesmo nome do filme que está na sala
-            if(v.getFilme().equals(s.getNomeFilme())){
-                System.out.printf("%s",v.getFilme());
-            }
         }
-        
-    }
-    
-}
+
+        System.out.println("\n\n");
+
+        for(cinema saidafilme : listaCinema){
+            System.out.println("Nome Filme: " + saidafilme.getnomefilme());
+            System.out.println("Faixa Etaria: " + saidafilme.getfaixaetaria() );
+            System.out.println("Capacidade Sala: " + saidafilme.getcapacidadeSala());
+            
+        }
+    }   
+}   
